@@ -1,0 +1,939 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     31742,        930]
+NotebookOptionsPosition[     28564,        823]
+NotebookOutlinePosition[     29005,        840]
+CellTagsIndexPosition[     28962,        837]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"(", "b", ")"}], " ", "Decay", " ", "Model", " ", 
+  RowBox[{"(", 
+   RowBox[{"exponential", " ", "case", " ", "only"}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   StyleBox["Exponential",
+    FontVariations->{"Underline"->True}], 
+   StyleBox[" ",
+    FontVariations->{"Underline"->True}], 
+   RowBox[{
+    StyleBox["Decay",
+     FontVariations->{"Underline"->True}], 
+    StyleBox[":",
+     FontVariations->{"Underline"->True}], 
+    StyleBox["\[IndentingNewLine]",
+     FontVariations->{"Underline"->True}], 
+    StyleBox[
+     RowBox[{
+      RowBox[{"If", " ", "a", " ", "function", " ", "x", 
+       RowBox[{"(", "t", ")"}], " ", "decreses", " ", "continuously", " ", 
+       "at", " ", "a", " ", "rate", " ", "k"}], ">", "0"}],
+     FontVariations->{"Underline"->False}]}]}], 
+  StyleBox[",",
+   FontVariations->{"Underline"->False}], 
+  StyleBox[" ",
+   FontVariations->{"Underline"->False}], 
+  StyleBox[
+   RowBox[{
+   "its", " ", "differential", " ", "equation", " ", "is", " ", "given", " ", 
+    "by"}],
+   FontVariations->{"Underline"->False}]}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"dx", "/", "dy"}], " ", "=", " ", 
+    RowBox[{"-", "kx"}]}], ",", " ", 
+   RowBox[{"k", ">", "0"}]}],
+  FontVariations->{"Underline"->False}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"then", " ", "x", 
+   RowBox[{"(", "t", ")"}], " ", "has", " ", "the", " ", "form"}],
+  FontVariations->{"Underline"->False}], "\[IndentingNewLine]", 
+ RowBox[{
+  StyleBox[
+   RowBox[{"x", 
+    RowBox[{"(", "t", ")"}]}],
+   FontVariations->{"Underline"->False}], 
+  StyleBox[" ",
+   FontVariations->{"Underline"->False}], 
+  StyleBox["=",
+   FontVariations->{"Underline"->False}], 
+  StyleBox[" ",
+   FontVariations->{"Underline"->False}], 
+  RowBox[{
+   SubscriptBox["x", "o"], 
+   SuperscriptBox["e", 
+    RowBox[{"-", "kt"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"where", " ", 
+   SubscriptBox["x", "o"], " ", "is", " ", "the", " ", "initial", " ", 
+   "amout", " ", "x", 
+   RowBox[{
+    RowBox[{"(", "0", ")"}], ".", " ", "In"}], " ", "this", " ", "case"}], 
+  ",", " ", 
+  RowBox[{"the", " ", "quantity", " ", "x", 
+   RowBox[{"(", "t", ")"}], " ", "is", " ", "said", " ", "to", " ", "exhibit",
+    " ", "exponential", " ", "decay"}], ",", " ", 
+  RowBox[{"and", " ", "k", " ", "is", " ", "the", " ", "decay", " ", 
+   RowBox[{"rate", ".", "\[IndentingNewLine]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.95195546869315*^9, 3.9519554755187273`*^9}, {
+  3.9519555133180237`*^9, 3.951955955070387*^9}, {3.951956032498829*^9, 
+  3.951956054695298*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Example", " ", "-", " ", "4"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "Suppose", " ", "that", " ", "a", " ", "certain", " ", "radioactive", " ", 
+   "element", " ", "has", " ", "an", " ", "annual", " ", "decay", " ", "rate",
+    " ", "of", " ", "10", 
+   RowBox[{"%", " ", ".", " ", "Starting"}], " ", "with", " ", "a", " ", 
+   "200", "gram", " ", "sample", " ", "of", " ", "the", " ", "element"}], ",",
+   " ", 
+  RowBox[{
+  "how", " ", "many", " ", "grams", " ", "will", " ", "be", " ", "left", " ", 
+   "in", " ", "3", " ", 
+   RowBox[{"years", " ", "?", "\[IndentingNewLine]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.9519560605689335`*^9, 3.951956172868616*^9}, {
+  3.9519562028695264`*^9, 3.9519562034633665`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["x", "o"], " ", "=", " ", "200"}], " ", ",", " ", 
+  RowBox[{"k", "=", 
+   RowBox[{
+    RowBox[{"10", "%"}], "=", ".1"}]}], " ", ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], " ", "in", " ", "3", " ", "years"}], " ", 
+   "=", " ", 
+   RowBox[{"?", " ", "\[IndentingNewLine]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9519563663847775`*^9, 3.9519564553469243`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+     RowBox[{
+      RowBox[{"-", "k"}], "*", 
+      RowBox[{"x", "[", "t", "]"}]}]}], ",", 
+    RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519564653297815`*^9, 3.9519565309710054`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "k"}], " ", "t"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.951956517767722*^9, 3.9519565335021114`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol1", "=", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "/.", 
+     RowBox[{"Sol", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "\[Rule]", " ", ".1"}], ",", 
+      RowBox[{
+       RowBox[{"C", "[", "1", "]"}], "\[Rule]", " ", "200"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519565380489826`*^9, 3.9519566057799935`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"200", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "0.1`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.951956606936095*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{"Sol1", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "50"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"Orange", ",", " ", 
+      RowBox[{"Thickness", "[", "0.02", "]"}]}], "}"}]}], ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", " ", "\"\<Decay Model\>\""}], ",", " ", 
+   RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", " ", 
+      RowBox[{"x", "[", "t", "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.951956611607975*^9, 3.9519566279678707`*^9}, {
+  3.9519566601397552`*^9, 3.9519567003256435`*^9}, {3.9519571311456957`*^9, 
+  3.951957170130421*^9}, {3.9519577039334707`*^9, 3.9519577357466555`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0.5, 0], Thickness[0.02], LineBox[CompressedData["
+1:eJwVjnk41HkAh4ecFU3oXHIki7UxyBV9P0b4JXdqk4hxzM+Vu2utq1zROjqt
+XLlS5K4oNLZQbWmpnnU8D7NPpCeVaGZKYds/3uf95/3jVedEuAeKMxgMp+/8
+b42chfLiTY07smKMXiwt0bglo6MaTueQWow7sIQ0eMduVGjTJWT5Re+CoGka
+PQZRXCm6njgY89pH/6HRlz1ACbhdZLKQOSFspPHQ4mTbNLefGKfyM/gBNB7l
+jURNccfIgnJ4S+oTLhw6pJ0nuR+In2xIy+2aIDyRM5GV8GagLFj8lbpvANg5
+tveqXWTw+JDXh+fRHATqz8ux5JiYerkyLu2uL5x0Aj+utVeC1c36Or6KD5qe
+/xb30Gw9FK9V1czs8sJ2Bd16iURl8BuuWH9I3Q/u1/yiyv1qCOtvdGtQ2oeI
+ntdG9U4aOFYeZtwu6YHTB6S2LIRpIqhLc7JOzB3+vb8GsWgtLFN1cnjr7Aqe
+9Aa3UE9t6L9MklAqcAJrddKFN7G6+CY5VuVc7gDfOSs95zA94EzsXKcmhbLi
+B8qiM1vBnvPNmW62RfPvFiMD7gYw21FrI55tg9h2K9ciRxbeyYY49rdbo+tR
+5WymlyFS+ngmUpMEwfbmHcH7jdBzJKxubsISl6+yWkNDjMGjGGWSInPkzXUk
+Rx7dhh76/VbRIVNMXos7QkeboGkPV+Yn1jbct8u/lJJiilQF70IVeSOIuQz/
+m5NkhrLNDxbZ1iwwrG+KlR43R73Jt7REF31krBM5DaRb4B4VrV+kp4fIA/7d
+opPbwetsUlXM0AE/2TiAnLeEftzQHcdZLSidLRjOLLOCT2Th/GCNJqqYusd7
+C3cgYihq1qRDA7xoVdsfrxOsSAw93TqshmK1UmUrD6D6z5ti/hmb0BE/z6Cf
+Aa/k3Dzut/4A9d3S3zb/Yg3uuQlbqY/r0dKvkzX03BoqU77y3YVrkd2zaKDm
+zYaNXMkViz1KOBvzJsR3lI1dqdlqL4IUEL9m0yoNTxuI5004HmhkokZH8lHs
+uA2G9+T2smXlIfVJbAPPZydOZO5rf2iyAtUGjQnFr3di6I9LlU6xMtDhXHNe
+CLcFZ6SNEyEhhZFdbU1739qiTn2zZ6VwGQbKT/xMYuywylG35+mcGD43u1lq
+zNrBcs1gniKbgaXb0a1ph+0xbajtYZO8QHYb2NnGC+zRV2HGDzkzT3q99YND
+YyhcH127KoH5mSj403eK4iik6GstvpP8THzoMrlnRyn4xKnmcr6KiDBasck4
+nsLBwdpznpMiopkhml84RUHlUsTrhLsiktTUlZ17gYKjecBMRbCIWEi7NrS2
+USiQPlvh2iskaSszxafuUAhrzme6dQjJ36u7PTZ2UuCfYo7vbRYSWtn4S0I3
+hcNjA2VhJUJykbWeTT2m8K761omnR4Xkk9f44PAohYq90y/9dIQEfhu05Ma+
+/+vGn69WFZKsIPdjhE/BMF254OMaIdGIuq9cMUFhyykmnS8uJG5pVwPD31PQ
+cEickRoVkMtZ/FslMxTGXezLDw8IyFTuxuUDsxTS082yh/sEJKkw+4aJ6HvP
+MfzS2Sogf5U+YAR/oXBPePq4aa2ArKtadC/8SmFZaa12yxUB4Vw3rXyyQEH+
+IE9iW4GA3GiIFC0tUfATza1ozxGQ/wADAjI1
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["t", TraditionalForm], 
+    FormBox[
+     RowBox[{"x", "(", "t", ")"}], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  PlotLabel->FormBox["\"Decay Model\"", TraditionalForm],
+  PlotRange->{{0, 50}, {0., 199.99997959183779`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.951956704012987*^9, 3.951957179505348*^9, 
+  3.9519577376997223`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", "3", "]"}], " ", "=", " ", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{"Sol1", "/.", 
+    RowBox[{"{", 
+     RowBox[{"t", "\[Rule]", " ", "3"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.951956708450642*^9, 3.9519567448573737`*^9}, {
+  3.9519572991961355`*^9, 3.95195730496177*^9}, {3.9519574793693924`*^9, 
+  3.9519574973694096`*^9}}],
+
+Cell[BoxData["148.16364413634358`"], "Output",
+ CellChangeTimes->{3.9519567465604334`*^9, 3.951957498588168*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Conclusion", ":", " ", "Hence"}], ",", " ", 
+  RowBox[{
+  "grams", " ", "left", " ", "after", " ", "3", " ", "years", " ", "will", 
+   " ", "be", " ", 
+   RowBox[{"148.164", "."}]}]}]], "Input",
+ CellChangeTimes->{{3.951956754950983*^9, 3.9519567586072283`*^9}, {
+  3.9519568276677895`*^9, 3.9519568418737173`*^9}, {3.9519575159944115`*^9, 
+  3.951957538276138*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ClearAll"], "Input",
+ CellChangeTimes->{{3.951957862482235*^9, 3.9519578660604877`*^9}}],
+
+Cell[BoxData["ClearAll"], "Output",
+ CellChangeTimes->{3.951957868044866*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Example", " ", "-", " ", "5"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "Using", " ", "the", " ", "same", " ", "element", " ", "as", " ", 
+    "Example"}], " ", "-", "4"}], ",", " ", 
+  RowBox[{
+  "if", " ", "a", " ", "particular", " ", "sample", " ", "of", " ", "the", 
+   " ", "element", " ", "decays", " ", "to", " ", "50", "grams", " ", "after",
+    " ", "5", " ", "years"}], ",", " ", 
+  RowBox[{"how", " ", "big", " ", "was", " ", "the", " ", "original", " ", 
+   RowBox[{"sample", "?"}]}]}]}], "Input",
+ CellChangeTimes->{{3.9519576400579243`*^9, 3.9519576869179945`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"k", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"10", "%"}], " ", "=", " ", "0.1"}]}], ",", " ", 
+  RowBox[{"t", " ", "=", " ", "5"}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", "t", ")"}]}], " ", "=", " ", "50"}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", "[", "0", "]"}], "=", "?"}]}]], "Input",
+ CellChangeTimes->{{3.9519575535260925`*^9, 3.9519575550105143`*^9}, {
+  3.951957832888483*^9, 3.9519578891394367`*^9}, {3.9519583254269514`*^9, 
+  3.9519583924745502`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9519573078053703`*^9, 3.9519573312742605`*^9}, {
+  3.951957502666289*^9, 3.9519575034631634`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"t", ",", "k", ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519578933111277`*^9, 3.9519578950769024`*^9}, {
+  3.951957967297633*^9, 3.9519579719226527`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+     RowBox[{
+      RowBox[{"-", "k"}], "*", 
+      RowBox[{"x", "[", "t", "]"}]}]}], ",", " ", 
+    RowBox[{"x", "[", "t", "]"}], ",", " ", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519580010009937`*^9, 3.951958024782984*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "k"}], " ", "t"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9519580253923087`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol1", " ", "=", " ", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "/.", 
+     RowBox[{"Sol", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "\[Rule]", " ", ".1"}], ",", " ", 
+      RowBox[{
+       RowBox[{"C", "[", "1", "]"}], "\[Rule]", " ", 
+       SubscriptBox["x", "o"]}], ",", " ", 
+      RowBox[{"t", "\[Rule]", " ", "5"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.951958032439285*^9, 3.951958131033969*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.6065306597126334`", " ", 
+  SubscriptBox["x", "o"]}]], "Output",
+ CellChangeTimes->{3.9519581316902122`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol2", " ", "=", " ", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"Sol1", " ", "\[Equal]", " ", "50"}], ",", " ", 
+    SubscriptBox["x", "o"]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519581386903596`*^9, 3.9519581641903553`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["x", "o"], "\[Rule]", "82.43606353500641`"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.951958164737088*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol3", " ", "=", " ", 
+  RowBox[{
+   SubscriptBox["x", "o"], "/.", 
+   RowBox[{"Sol2", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9519581697839656`*^9, 3.9519581897222633`*^9}}],
+
+Cell[BoxData["82.43606353500641`"], "Output",
+ CellChangeTimes->{3.951958190440864*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol4", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "/.", 
+    RowBox[{"Sol", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"k", "\[Rule]", " ", "0.1"}], ",", " ", 
+     RowBox[{
+      RowBox[{"C", "[", "1", "]"}], " ", "\[Rule]", " ", "Sol3"}]}], 
+    "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.9519581978627367`*^9, 3.951958225925381*^9}}],
+
+Cell[BoxData[
+ RowBox[{"82.43606353500641`", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "0.1`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.9519582293314857`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{"Sol4", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "50"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", " ", 
+      RowBox[{"Thickness", "[", "0.031", "]"}]}], "}"}]}], ",", " ", 
+   RowBox[{"PlotLabel", " ", "\[Rule]", " ", "\"\<Decay Model\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9519582446759214`*^9, 3.9519582963166075`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.031], LineBox[CompressedData["
+1:eJwVjnlYzHkAh0dLB0JR6VgdumOVku7vp9E0P1Ipo40ellIzRehSTFJSmqbV
+IeLp1oWeTUplJKMeFZJjaJdimRkpuUfpUq39433eP99XP3C/b7AcjUbz/Mn/
+NsicKitadsUl3Fu4eTCfhSZFM91wTiaROWTcEJ1ioTWuptyUU0zG7lv63OKz
+0GEZwZbnXCb+JxTGy7ks3MkQUSNsIZmrukYvN4CFuw7Jgg/sh6SsOuaaog4L
+97L7IgbZr0ig3cc0evFmbGhR8HrL/kyKNXLHGmp80a1sqzR7Ow0zzpXB412b
+QM9k3KryVkT95LTm+TAvBK+aULZSXoTGs9r9P/I84GkW/FWduQRDdKIseEKh
+7umRmLt2S1HZzNT+nOAOR1Xzy7OP6mCjkoYjtdYN7Mmcwgp/PWSmh1X0WtOx
+v2PA+rKnAdRH1ldFJgHp2+SNpvYa4gjjSNriWmcEdXJDrDjGQBPDmCl1QKuC
+ps+eraa4o/i+ySXEDlYqiWfeRZuDdZiXkj2yBju/Oa/w2rsC7XM/S8wGrFFa
+1K4z+udv0Kdz76i9sUL9SYc+ka8lmgrmlWj/aono686bCjdaweKHZoSj40oI
+71XIeAGrsWFBY7PQwxyhTPuWUH9rbDuZcjJXZIKCC1YNe8JssIpWu5jPNkL2
+t5akA7FrUBC1Ql3mthxvL8Uc5ETaIrQ0MNUjTh+33XPOHju2FtlKgSurwnQx
+y7tXkplohwmjC6yeSB3QXBtnlRyyR3e5ievFh5pI0xj1FJ1wAJfrxeuy18CB
+bUFto8mO0M+PsVCbrwZxks1uctoJsSanC9OHVLHk1LleXqkzrvLT+wSKKqhc
+ZH6oM98FE6ohqoz+BWiN1GWYVBMsElTX37o7D0V6JTrOLKCG05ucYqGElvgJ
+GucREJB7miv6Rx76Hgo/lv/uipndQRpZmbNx9aEZ//lTV+T6Sy2sy+SQ0TFt
+qbedjpr6dl+/VhpORb0L2/mCDtHkJ/5zv2kSr7ZsocHWdWCOLPfITpkkF83m
+3It+vQ48xZ4tgrYxIj88S7N1hxuG3GQ+Rvu/kyrLKwlFA26w5aYFCU2HiVng
+Ja+pcAa0Nvvwoo1lpG+9oG7LewaMH3sP/RLzhYjKDq8kUe44GtXdZHPuIxmr
+93EykLnD3NSvUOvBEJm5FtmQuo8JLR/d5wW+g8TD0p0RP8LE0WXq0ynSftK5
+fVXonigKwrxdl2L/lhLVIE5zYQyFvNXW6W3dUrKDU6r8KJbCrpaDTirtUvI9
+cnGdTTyFpLgilev1UmKYNjoxdZyC0YkKb/tsKUmsE2ZknaFgaltS+WGjlDgo
+bKptEFAwiK931+6UkNT5PLnBZgoFgpv0lzcl5LFKG0vrJgU54bcX5xslhKNj
+M57QRoFxLanfrlJC8qyW0qmunz9ciVZWioQMB7x+0vuCgnhDReM7NwnBLk1j
+5VcUDg27PnvjJCH8EN84IqYg+CpLkNpIiEHEbZ3yfgrs5N1b3htKiE/qheDw
+TxS6rfdNGs6RkAK+uKn4y8/+QJaW05SYDGZpzRXJKNxoSqjzGxGTxPyMGttR
+Cgv/LXM/0y8m90vaaaHjFPgjj0jzSzHRqJz2zZ+k0PvX1Wppj5gEVq+t6J6i
+8EdOV9rCB2JSU3tgdGaGQuGznB6XDjH5D83LNzY=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotLabel->FormBox["\"Decay Model\"", TraditionalForm],
+  PlotRange->{{0, 50}, {0., 82.43605512316363}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.951958296910224*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Conclusion", ":", " ", "Hence"}], ",", " ", 
+  RowBox[{"original", " ", "sample", " ", "was", " ", "82.4361", " ", 
+   RowBox[{"grams", "."}]}]}]], "Input",
+ CellChangeTimes->{{3.9519584238494787`*^9, 3.951958463725249*^9}, {
+  3.9519585476795473`*^9, 3.9519585498670425`*^9}, {3.951958741103629*^9, 
+  3.9519587908225183`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Example", " ", "-", " ", "6"}], "\[IndentingNewLine]", 
+ RowBox[{"Suppose", " ", "that", " ", "a", " ", "certain", " ", "radioactive",
+   " ", "isotope", " ", "has", " ", "an", " ", "annual", " ", "decay", " ", 
+  "rate", " ", "of", " ", "5", 
+  RowBox[{"%", ".", " ", "How"}], " ", "many", " ", "years", " ", "will", " ",
+   "it", " ", "take", " ", "for", " ", "a", " ", "100", " ", "gram", " ", 
+  "sample", " ", "to", " ", "decay", " ", "to", " ", "40", " ", 
+  RowBox[{"grams", "?"}]}]}], "Input",
+ CellChangeTimes->{{3.9519588030412674`*^9, 3.9519588464322443`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Here", ",", " ", 
+  RowBox[{"k", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"5", "%"}], " ", "=", " ", "0.05"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", "100"}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", "t", ")"}]}], " ", "=", " ", "40"}], ",", " ", 
+  RowBox[{"t", "=", " ", "?"}]}]], "Input",
+ CellChangeTimes->{{3.9519588569946046`*^9, 3.9519589000103683`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"t", ",", "k", ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.951958925870065*^9, 3.9519589326826615`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+     RowBox[{
+      RowBox[{"-", "k"}], "*", 
+      RowBox[{"x", "[", "t", "]"}]}]}], ",", 
+    RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.951959026918041*^9, 3.951959079340612*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "k"}], " ", "t"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.951959085325559*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol1", "=", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "/.", 
+     RowBox[{"Sol", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "\[Rule]", " ", ".05"}], ",", 
+      RowBox[{
+       RowBox[{"C", "[", "1", "]"}], "\[Rule]", " ", "100"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519590917317467`*^9, 3.9519591637477217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"100", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "0.05`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.951959164950698*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{"Sol1", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"Purple", ",", 
+      RowBox[{"Thickness", "[", "0.02", "]"}]}], "}"}]}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", " ", "\"\<Decay Model\>\""}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"x", "[", "t", "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519591730446224`*^9, 3.951959307998873*^9}, {
+  3.951959578010973*^9, 3.951959578339099*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[0.5, 0, 0.5], Thickness[0.02], LineBox[CompressedData["
+1:eJwVlGk41HkAx4ccqWhChx5yVli7jCTZ9Psauc9x/lXkiBlX7q61knJF6+i0
+cuVKkbui0NhCtaWletbxPMw+zdBGYcoUYdsX3+fz5vPi8+qrHhDpGiROo9Ec
+v+9/amQvlhVt4e7NjN3xenmZwt2VOqoRnGJSgzE7xhwF7vHb5dqcOrLqik9+
+8CSFboNothSnk9gZcdtG/qbQm9Vv85ndRwQFdP5cA4UnpmdaJ9mjxCiFl847
+TOFp7nD0BPsjWVSOaE557gW7dmknAXuZ+MuENt+r9sRzWWMZCR86SkPE36r7
+uYOZbfmwynkTnh068PFVjCuC9OdlGbJqmHizJj71gQscdYJmNlhrwexOXS1P
+xQmNr36Nf2KiDYWbldXTtvb4WV63TuKUHnj1180/ptiAvZBXWEEZILyvgVWv
+aIXI7vEddY6GOF4WbtQmuQ/n9kttXQw3QnCnlqBWjInAnl+CGRxjrFB1tHvv
+BHCllVhh3ibQf5MkoZhvBsa6pMvv4kzxTXK00qnMFH5CMz2n8D3A+Thhh5YJ
+SoseK4vO7wVT6Jc92bQTTb+ZDve7AiZ7ayzEs3Ygrs3MpdDBHFMyoQ59bQx0
+Pq2YzTjARHIv11hKoI8Q693tIZQFuo+G1wr5erh2g9ESFroPXBtaqaRIB7nC
+9tNRxyzRzfnwk+jQdghuxh/lxFih0Y298gfGVjyyyruanGyNFHmfAhU5TYg5
+D/2TnWSDUs3HS0xzddDM74iVnLBFnfG31FPOqkjfKHLsT7PDQ5sY/UI9ZUTt
+D+wSnbEHt6NRVSFdCbzTRofJJQfoxw/ed5jdAMUL+UMZpY7wjSqYH6hWRCVd
+90RPgRMiB6NnjdvlwY1Rtdx+yxmrT4Wdaxmio0itRNnM3QVVf9wRC0yXQ3vC
+PI3z0gVvZVnuj1pWQ91e+pumFwvsi3xLqZmVaO7TyRx8xYLKhJ9cV4EUsrqX
+DNR8XGEhW3zd1E0CF2LfhfqNuMI2JUvtdbA4EtZvWavh7QbxXL7D/gYaqnUk
+n8aNuWHILaeHKbNEpD6JKXF93XEyw7PtifECqTJoSCwad8fg71crHOO+EJ2A
+m06LER4IGG4NiJSYI8O2rY0e7z1Qq67pXTEnJP1lJ38ksZ5Y66Db/UI4Q740
+sfZozHpiz/qBXAXmNFm+F9OSesQLk4ba7hanp4i9gZVlwmcv9Jab8ELP/0t6
+fPRDwmIp3BrZsDaRPkHkAzn3C+MpJOtvW5qSnCC+nFLZl8co+Mar5gQsjJO5
+GIVGowQKBwdqLnoLxolWumh+8SwFlauR44kPxklSY2dWzmUKDrsPT5eHjBNT
+aZf6llYK+dIXyl16BCR1TYb4xH0K4U15dFa7gPy1rst9cwcF3ln6mEeTgHCU
+jb4mdlE4MtpfGl4sIFcYm5g2zyhMVd09+eKYgHw6MDYwNEKh3GPyjb+OgMBf
+aZvs6Pd+3YRLVaoCkhnsepzwKBimKefPrBcQjehHyuV8ClvP0jl54gLCSr0R
+FPGBgobdqWmpET65lsm7WzxNYczZuuxIP59M5Gxe1T9LIS3NJGuol0+SCrJu
+G4u++wGGXzta+OTPkse0kK8UHs6dO7Grhk82Vi65FixQWFFSo918nU8Cbu2q
+eL5IQe4gV2JnPp/cro8S/f9b/iLh6rZsPvkPa+85Lg==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["t", TraditionalForm], 
+    FormBox[
+     RowBox[{"x", "(", "t", ")"}], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  PlotLabel->FormBox["\"Decay Model\"", TraditionalForm],
+  PlotRange->{{0, 100}, {0., 99.99998979591889}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.951959310592626*^9, 3.951959578917225*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"Sol1", "\[Equal]", "40"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.951959344640131*^9, 3.95195937070249*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.951959372093112*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"t", "\[Rule]", "18.325814637483102`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.951959372093112*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Conclusion", " ", ":", " ", 
+  RowBox[{
+  "Hence", " ", "it", " ", "will", " ", "take", " ", "18.3258", " ", "years", 
+   " ", "for", " ", "100", "gram", " ", "sample", " ", "to", " ", "decay", 
+   " ", "to", " ", "40", " ", 
+   RowBox[{"grams", ".", " "}]}]}]], "Input",
+ CellChangeTimes->{{3.9519593769682007`*^9, 3.9519594636881657`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Example", " ", "-", " ", "7"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "Using", " ", "the", " ", "same", " ", "element", " ", "as", " ", "in", 
+    " ", "Example"}], " ", "-", " ", "6"}], ",", " ", 
+  RowBox[{
+  "what", " ", "is", " ", "the", " ", "half", " ", "life", " ", "of", " ", 
+   "the", " ", 
+   RowBox[{"element", "?", "\[IndentingNewLine]", "Here"}]}], ",", " ", 
+  RowBox[{"k", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"5", "%"}], " ", "=", " ", "0.05"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", "100"}], ",", " ", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", "t", ")"}]}], " ", "=", " ", "40"}], ",", " ", 
+  RowBox[{"t", "=", " ", 
+   RowBox[{"?", "\[IndentingNewLine]"}]}]}]}], "Input",
+ CellChangeTimes->{
+  3.9519581673153615`*^9, {3.9519596876385345`*^9, 3.951959786030051*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+     RowBox[{
+      RowBox[{"-", "k"}], "*", 
+      RowBox[{"x", "[", "t", "]"}]}]}], ",", " ", 
+    RowBox[{"x", "[", "t", "]"}], ",", " ", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519597966393275`*^9, 3.9519598147189884`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "k"}], " ", "t"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.951959817062583*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sol1", " ", "=", " ", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "/.", 
+     RowBox[{"Sol", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "\[Rule]", " ", "0.05"}], ",", 
+      RowBox[{
+       RowBox[{"C", "[", "1", "]"}], "\[Rule]", " ", "100"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.9519598194377375`*^9, 3.9519598590627356`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"100", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "0.05`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.9519598615314245`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"Sol1", "\[Equal]", "50"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519598638760257`*^9, 3.951959870861076*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.9519598723453026`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"t", "\[Rule]", "13.862943611198904`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9519598723453026`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Conclusion", ":", " ", "Hence"}], ",", " ", 
+  RowBox[{"half", "-", 
+   RowBox[{
+   "life", " ", "of", " ", "radioactive", " ", "isotope", " ", "is", " ", 
+    "13.8629", " ", 
+    RowBox[{"years", "."}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9519599057046757`*^9, 3.9519599307217646`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.95195791338999*^9, 3.9519579814693646`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9519579845167665`*^9, 3.9519579846885014`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.951957505963163*^9, 3.9519575088694143`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.951956191950675*^9, 3.9519561943568583`*^9}}]
+},
+WindowSize->{1904, 935},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 2., 2. Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2635, 74, 298, "Input"],
+Cell[3195, 96, 753, 15, 160, "Input"],
+Cell[3951, 113, 434, 12, 92, "Input"],
+Cell[CellGroupData[{
+Cell[4410, 129, 388, 11, 57, "Input"],
+Cell[4801, 142, 348, 10, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5186, 157, 466, 14, 57, "Input"],
+Cell[5655, 173, 179, 5, 60, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5871, 183, 754, 16, 57, "Input"],
+Cell[6628, 201, 2315, 46, 528, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8980, 252, 383, 9, 57, "Input"],
+Cell[9366, 263, 112, 1, 57, "Output"]
+}, Open  ]],
+Cell[9493, 267, 401, 9, 57, "Input"],
+Cell[CellGroupData[{
+Cell[9919, 280, 102, 1, 57, "Input"],
+Cell[10024, 283, 77, 1, 82, "Output"]
+}, Open  ]],
+Cell[10116, 287, 624, 13, 126, "Input"],
+Cell[10743, 302, 511, 13, 57, "Input"],
+Cell[11257, 317, 147, 2, 57, "Input"],
+Cell[11407, 321, 212, 4, 57, "Input"],
+Cell[CellGroupData[{
+Cell[11644, 329, 411, 11, 57, "Input"],
+Cell[12058, 342, 324, 10, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12419, 357, 551, 15, 57, "Input"],
+Cell[12973, 374, 134, 3, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13144, 382, 263, 6, 57, "Input"],
+Cell[13410, 390, 189, 6, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13636, 401, 236, 6, 57, "Input"],
+Cell[13875, 409, 87, 1, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13999, 415, 442, 13, 57, "Input"],
+Cell[14444, 430, 196, 5, 85, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14677, 440, 462, 11, 57, "Input"],
+Cell[15142, 453, 2149, 41, 539, "Output"]
+}, Open  ]],
+Cell[17306, 497, 363, 7, 57, "Input"],
+Cell[17672, 506, 596, 9, 126, "Input"],
+Cell[18271, 517, 447, 12, 57, "Input"],
+Cell[18721, 531, 159, 3, 57, "Input"],
+Cell[CellGroupData[{
+Cell[18905, 538, 379, 11, 57, "Input"],
+Cell[19287, 551, 322, 10, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19646, 566, 467, 14, 57, "Input"],
+Cell[20116, 582, 180, 5, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20333, 592, 620, 15, 57, "Input"],
+Cell[20956, 609, 2297, 45, 553, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23290, 659, 181, 4, 57, "Input"],
+Cell[23474, 665, 531, 11, 46, "Message"],
+Cell[24008, 678, 163, 4, 82, "Output"]
+}, Open  ]],
+Cell[24186, 685, 365, 7, 57, "Input"],
+Cell[24554, 694, 889, 23, 160, "Input"],
+Cell[CellGroupData[{
+Cell[25468, 721, 413, 11, 57, "Input"],
+Cell[25884, 734, 322, 10, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26243, 749, 478, 14, 57, "Input"],
+Cell[26724, 765, 182, 5, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26943, 775, 184, 4, 57, "Input"],
+Cell[27130, 781, 533, 11, 46, "Message"],
+Cell[27666, 794, 165, 4, 82, "Output"]
+}, Open  ]],
+Cell[27846, 801, 325, 8, 57, "Input"],
+Cell[28174, 811, 93, 1, 57, "Input"],
+Cell[28270, 814, 96, 1, 57, InheritFromParent],
+Cell[28369, 817, 94, 1, 57, InheritFromParent],
+Cell[28466, 820, 94, 1, 57, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
